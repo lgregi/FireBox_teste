@@ -1,0 +1,91 @@
+<header class="bg-gradiente">
+  <div class="header container">
+    <a routerLink="/" class="logo">
+      <img src="../../assets/Vector.svg" alt="" width="80" height="64">
+      <p class="font-1-xl cor-texto">Firebox</p>
+    </a>
+    <input class="font-1-m barra-pesquisa" type="text" placeholder="barra pesquisa">
+    <nav>
+  <button class="btn" (click)="menuMobile()">
+    <span class="icon">
+      <svg viewBox="0 0 175 80" width="40" height="40">
+        <rect width="80" height="15" fill="#262626" rx="10"></rect>
+        <rect y="30" width="80" height="15" fill="#262626" rx="10"></rect>
+        <rect y="60" width="80" height="15" fill="#262626" rx="10"></rect>
+      </svg>
+    </span>
+  </button>
+  <ng-container *ngIf="estaLogado(); else loginCadastro">
+    <ul class="font-2-m cor-texto login-cadastro" *ngIf="menuMobileIsOpen">
+      <li class="mb-12"><a routerLink="/usuario">Minha página</a></li>
+      <li class="mb-12" (click)="logout()"><a routerLink="">Sair</a></li>
+    </ul>
+  </ng-container>
+  <ng-template #loginCadastro>
+    <ul class="font-2-l cor-texto login-cadastro" *ngIf="menuMobileIsOpen">
+      <li class="mb-12"><a routerLink="/login">Login</a></li>
+      <li class="mb-12"><a routerLink="/cadastro">Cadastro</a></li>
+    </ul>
+  </ng-template>
+</nav>
+
+  </div>
+</header>
+
+
+
+
+<!--
+<body>
+  
+  <div class="teste">  
+  
+    <nav class="navbar fixed-top navbar-light bg-white">
+      <div>
+        <div class="menu">
+          <div class="container">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link"routerLinkActive="active" routerLink="/smartphones">Smartphones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"routerLinkActive="active" routerLink="/eletronicos">Eletrônicos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"routerLinkActive="active" routerLink="/home">home</a>
+              </li>             
+              <li>
+                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal" >Cadastrar Novo Produto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"routerLinkActive="active" routerLink="/meusprodutos">Meus produtos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"routerLinkActive="active" routerLink="/favoritos">Favoritos</a>
+              </li>
+              <li>
+                <a class="nav-link" ><app-pesquisa></app-pesquisa></a>
+              </li>
+              
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+  <br /><br /><br />
+  
+  <div class="container">
+    <app-cadastrar-produto></app-cadastrar-produto>
+    <router-outlet></router-outlet>  
+  </div>
+  
+
+</body>
+
+-->
+
+
+
