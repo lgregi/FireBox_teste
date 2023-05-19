@@ -10,12 +10,11 @@ export class Favoritos {
             })
     }
 
-    public consultarFavoritados(email: string): Promise<any> {
+   public consultarFavoritados(email: string): Promise<any> {
 
         return new Promise((resolve, reject) => {
             firebase.database().ref(`favoritos/${btoa(email)}`)
-                .orderByChild('email')
-                .equalTo(email)
+                .orderByKey()
                 .once('value')
                 .then((snapshot) => {
                     let produtos: Array<any> = []
